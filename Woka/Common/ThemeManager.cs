@@ -13,6 +13,9 @@ public static class ThemeManager
         Application.Current.RequestedThemeChanged += (s, e) => Apply();
     }
 
+    /// <summary>
+    /// Applies theme
+    /// </summary>
     public static void Apply()
     {
         if (Application.Current is null)
