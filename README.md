@@ -4,7 +4,7 @@
 
 <p align="center">
    <a href="https://discord.gg/mhxsSMy2Nf"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white"></a>
-   <a href="https://github.com/jerry08/Woka"><img src="https://img.shields.io/nuget/dt/Woka.svg?label=Downloads&color=%233DDC84&logo=nuget&logoColor=%23fff&style=for-the-badge"></a>
+   <a href="https://nuget.org/packages/Woka"><img src="https://img.shields.io/nuget/dt/Woka.svg?label=Downloads&color=%233DDC84&logo=nuget&logoColor=%23fff&style=for-the-badge"></a>
 </p>
 
 **Woka** is a library that provides workarounds for issues/bugs related to [.NET MAUI](https://github.com/dotnet/maui). This project uses mostly handlers to provide workarounds.
