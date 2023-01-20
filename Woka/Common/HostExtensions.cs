@@ -11,6 +11,9 @@ using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 
 namespace Woka;
 
+/// <summary>
+/// Host extensions for workarounds
+/// </summary>
 public static class HostExtensions
 {
     /// <summary>
@@ -64,13 +67,13 @@ public static class HostExtensions
 #endif
         });
 
-        AllowMultiLineTruncationOnAndroid();
+        AllowMultiLineTruncation();
     }
 
     /// <summary>
     /// Taken from <see href="https://github.com/hartez/MultilineTruncate">MultilineTruncate</see>
     /// </summary>
-    private static void AllowMultiLineTruncationOnAndroid()
+    private static void AllowMultiLineTruncation()
     {
 #if ANDROID
 
@@ -103,6 +106,23 @@ public static class HostExtensions
         Label.ControlsLabelMapper.AppendToMapping(
             nameof(Label.MaxLines), UpdateMaxLines);
 
+#endif
+
+#if WINDOWS
+        static void UpdateMaxLines(Microsoft.Maui.Handlers.LabelHandler handler, ILabel label)
+        {
+            var textView = handler.PlatformView;
+            if (label is Label controlsLabel && textView.TextTrimming == Microsoft.UI.Xaml.TextTrimming.CharacterEllipsis)
+            {
+                textView.MaxLines = controlsLabel.MaxLines;
+            }
+
+            Label.ControlsLabelMapper.AppendToMapping(
+               nameof(Label.LineBreakMode), UpdateMaxLines);
+
+            Label.ControlsLabelMapper.AppendToMapping(
+                nameof(Label.MaxLines), UpdateMaxLines);
+        }
 #endif
     }
 }
