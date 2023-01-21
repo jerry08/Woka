@@ -1,19 +1,9 @@
 ﻿using System;
+using System.ComponentModel;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Networking;
-using System.ComponentModel;
 using Woka.Utils.Extensions;
-
-#if IOS || MACCATALYST
-using PlatformImage = UIKit.UIImageView;
-#elif ANDROID
-using PlatformImage = Android.Widget.ImageView;
-#elif WINDOWS
-using PlatformImage = Microsoft.UI.Xaml.Controls.Image;
-#elif NETSTANDARD || !PLATFORM || (NET6_0_OR_GREATER && !IOS && !ANDROID)
-using PlatformImage = System.Object;
-#endif
 
 namespace Woka.Handlers;
 
@@ -53,11 +43,6 @@ public class ImageHandler : Microsoft.Maui.Handlers.ImageHandler
     {
         if (e.NetworkAccess == NetworkAccess.Internet)
             ReloadImage();
-    }
-
-    protected override void ConnectHandler(PlatformImage platformView)
-    {
-        base.ConnectHandler(platformView);
     }
 
     public void ReloadImage()

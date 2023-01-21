@@ -1,11 +1,4 @@
-﻿using Android.Widget;
-using Microsoft.Maui.Handlers;
-using Microsoft.Maui.Platform;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Maui.Platform;
 
 namespace Woka.Handlers;
 
@@ -15,11 +8,6 @@ public class RefreshViewHandler : Microsoft.Maui.Handlers.RefreshViewHandler
     {
         //You can play around with the offsets
         platformView.SetProgressViewOffset(false, -120, 60);
-
-        //var f = PlatformView.Class.GetDeclaredField("mCircleView");
-        //var f = PlatformView.Class.Superclass.GetDeclaredField("mCircleView");
-        //f.Accessible = true;
-        //var img = f.Get(PlatformView) as ImageView;
 
         base.ConnectHandler(platformView);
     }
