@@ -29,6 +29,7 @@ public static class HostExtensions
 #if ANDROID
             handlers.AddHandler<Entry, EntryHandler>();
             handlers.AddHandler<RefreshView, RefreshViewHandler>();
+            handlers.AddHandler<CollectionView, CollectionViewHandler>();
 #endif
         }).ConfigureLifecycleEvents(events =>
         {
