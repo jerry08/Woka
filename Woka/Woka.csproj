@@ -27,6 +27,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Handlers\CollectionView\CollectionViewHandler - Copy %282%29.android.cs" />
+	  <Compile Remove="Handlers\CollectionView\CollectionViewHandler - Copy %283%29.android.cs" />
+	  <Compile Remove="Handlers\CollectionView\CollectionViewHandler - Copy %284%29.android.cs" />
+	  <Compile Remove="Handlers\CollectionView\CollectionViewHandler - Copy %285%29.android.cs" />
+	  <Compile Remove="Handlers\CollectionView\CollectionViewHandler - Copy %286%29.android.cs" />
+	  <Compile Remove="Handlers\CollectionView\CollectionViewHandler - Copy.android.cs" />
 	  <Compile Remove="Handlers\Entry\MaterialEntryHandler.android.cs" />
 	  <Compile Remove="Utils\Extensions\ImageSourcePartLoaderEx - Copy.cs" />
 	</ItemGroup>
