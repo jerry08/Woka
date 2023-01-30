@@ -41,3 +41,4 @@ Fixes known issues/bugs:
  - [#6092](https://github.com/dotnet/maui/issues/6092) - The prompts displayed by DisplayAlert and other controls do not follow the theme set
  - [#6030](https://github.com/dotnet/maui/issues/6030) - Label MaxLines doesn't work
  - [#12219](https://github.com/dotnet/maui/issues/12219) - [Android] CollectionView: VirtualView cannot be null here, when clearing and adding items on second navigation
+ - [#4116](https://github.com/dotnet/maui/issues/4116) - [Windows] CollectionView ItemsUpdatingScrollMode property not working
