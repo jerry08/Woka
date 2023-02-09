@@ -66,7 +66,8 @@ public static class HostExtensions
             handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToAndroid());
 
             //Set cursor color
-            handler.PlatformView.TextCursorDrawable.SetTint(v.TextColor.ToAndroid());
+            if (v.TextColor is not null)
+                handler.PlatformView.TextCursorDrawable?.SetTint(v.TextColor.ToAndroid());
 #endif
         });
 
