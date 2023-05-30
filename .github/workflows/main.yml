@@ -43,6 +43,12 @@ jobs:
       - name: Build MAUI Android
         run: dotnet publish Woka/Woka.csproj -c Release -f net7.0-android --no-restore
 
+      - name: Upload Android Artifact
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8
+        with:
+          name: woka-android-ci-build
+          path: Woka/bin/Release/net7.0-android/Woka.dll
+
 # MAUI Windows Build
   build-windows:
     runs-on: windows-latest
@@ -65,6 +71,12 @@ jobs:
 
       - name: Build MAUI Windows
         run: dotnet publish Woka/Woka.csproj -c Release -f net7.0-windows10.0.19041.0 --no-restore
+
+      - name: Upload Android Artifact
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8
+        with:
+          name: woka-windows-ci-build
+          path: Woka/bin/Release/net7.0-windows10.0.19041.0/Woka.dll
 
 # MAUI iOS Build
   build-ios:
@@ -89,6 +101,12 @@ jobs:
       - name: Build MAUI iOS
         run: dotnet build Woka/Woka.csproj -c Release -f net7.0-ios --no-restore /p:buildForSimulator=True /p:packageApp=True /p:ArchiveOnBuild=False
 
+      - name: Upload Android Artifact
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8
+        with:
+          name: woka-ios-ci-build
+          path: Woka/bin/Release/net7.0-ios/Woka.dll
+
 # MAUI MacCatalyst Build
   build-mac:
     runs-on: macos-12
@@ -111,3 +129,9 @@ jobs:
 
       - name: Build MAUI MacCatalyst
         run: dotnet publish Woka/Woka.csproj -c Release -f net7.0-maccatalyst --no-restore -p:BuildIpa=True
+
+      - name: Upload Android Artifact
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8
+        with:
+          name: woka-macos-ci-build
+          path: Woka/bin/Release/net7.0-maccatalyst/Woka.dll
