@@ -33,6 +33,36 @@ builder
     .ConfigureWorkarounds();
 ```
 
+### Special cases
+
+For .Net MAUI issues [#15143](https://github.com/dotnet/maui/issues/15143) and [#15018](https://github.com/dotnet/maui/issues/15018), use WokaGrid control:
+
+```
+xmlns:woka="clr-namespace:Woka;assembly=Woka"
+```
+
+```C#
+<woka:WokaGrid ...>
+    ...
+</woka:WokaGrid>
+```
+
+Or override the LayoutManager in a custom Grid control. For example:
+
+```C#
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Layouts;
+using Woka.Layouts;
+```
+
+```C#
+public class CustomGrid : Grid
+{
+    protected override ILayoutManager CreateLayoutManager()
+        => new WokaGridLayoutManager(this);
+}
+```
+
 ### Workaround coverage:
 Fixes known issues/bugs:
  - [#5983](https://github.com/dotnet/maui/issues/5983) - Keyboard does not Pop Up when Entry View's Focus is set to True Programmatically
@@ -43,3 +73,5 @@ Fixes known issues/bugs:
  - [#12219](https://github.com/dotnet/maui/issues/12219) Completed ✔️ - [Android] CollectionView: VirtualView cannot be null here, when clearing and adding items on second navigation
  - [#4116](https://github.com/dotnet/maui/issues/4116) - [Windows] CollectionView ItemsUpdatingScrollMode property not working
  - [#8387](https://github.com/dotnet/maui/issues/8387) - [Windows] Notify changes in CollectionView Layouts
+ - [#15143](https://github.com/dotnet/maui/issues/15143) - Account for padding when expanding * rows/columns to new sizes
+ - [#15018](https://github.com/dotnet/maui/issues/15018) - [iOS/Catalyst] Grid issue with calculating * values on iOS/MacCatalyst
