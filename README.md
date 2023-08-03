@@ -38,7 +38,7 @@ builder
 For .Net MAUI issues [#15143](https://github.com/dotnet/maui/issues/15143) and [#15018](https://github.com/dotnet/maui/issues/15018), use WokaGrid control:
 
 ```
-xmlns:woka="clr-namespace:Woka;assembly=Woka"
+xmlns:woka="clr-namespace:Woka.Controls;assembly=Woka"
 ```
 
 ```C#
