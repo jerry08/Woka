@@ -75,3 +75,4 @@ Fixes known issues/bugs:
  - [#8387](https://github.com/dotnet/maui/issues/8387) - [Windows] Notify changes in CollectionView Layouts
  - [#15143](https://github.com/dotnet/maui/issues/15143) - Account for padding when expanding * rows/columns to new sizes
  - [#15018](https://github.com/dotnet/maui/issues/15018) - [iOS/Catalyst] Grid issue with calculating * values on iOS/MacCatalyst
+ - [#14557](https://github.com/dotnet/maui/issues/14557) - CollectionView Header & Footer not showing

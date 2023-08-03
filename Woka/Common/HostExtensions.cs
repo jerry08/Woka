@@ -77,6 +77,16 @@ public static class HostExtensions
         });
 
         AllowMultiLineTruncation();
+
+#if WINDOWS
+        // Taken from https://github.com/dotnet/maui/issues/14557#issuecomment-1651575327
+        Microsoft.Maui.Controls.Handlers.Items.CollectionViewHandler.Mapper
+            .AppendToMapping("HeaderAndFooterFix", (_, collectionView) =>
+        {
+            collectionView.AddLogicalChild((Element)collectionView.Header);
+            collectionView.AddLogicalChild((Element)collectionView.Footer);
+        });
+#endif
     }
 
     /// <summary>
