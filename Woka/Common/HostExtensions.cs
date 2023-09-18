@@ -32,6 +32,7 @@ public static class HostExtensions
             handlers.AddHandler<CollectionView, CollectionViewHandler>();
 #elif WINDOWS
             handlers.AddHandler<CollectionView, CollectionViewHandler>();
+            handlers.AddHandler<RefreshView, RefreshViewHandler>();
 #endif
         }).ConfigureLifecycleEvents(events =>
         {
