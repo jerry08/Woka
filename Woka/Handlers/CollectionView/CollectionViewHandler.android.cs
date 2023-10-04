@@ -1,5 +1,6 @@
-﻿using Microsoft.Maui.Controls;
-using AndroidX.RecyclerView.Widget;
+﻿using AndroidX.RecyclerView.Widget;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Handlers.Items;
 
 namespace Woka.Handlers;
 
@@ -8,20 +9,9 @@ namespace Woka.Handlers;
 /// </summary>
 public class CollectionViewHandler : Microsoft.Maui.Controls.Handlers.Items.CollectionViewHandler
 {
-    private IItemsLayout ItemsLayout { get; set; } = default!;
-
-    protected override IItemsLayout GetItemsLayout()
+    protected override void DisconnectHandler(RecyclerView platformView)
     {
-        // Throws exception in certain scenarios ("Virtual view must not be null here")
-        //return base.GetItemsLayout();
-
-        return ItemsLayout;
-    }
-
-    protected override void ConnectHandler(RecyclerView platformView)
-    {
-        base.ConnectHandler(platformView);
-
-        ItemsLayout = VirtualView.ItemsLayout;
+        base.DisconnectHandler(platformView);
+        (platformView as IMauiRecyclerView<ReorderableItemsView>)?.TearDownOldElement(VirtualView);
     }
 }
