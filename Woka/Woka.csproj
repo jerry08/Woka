@@ -11,6 +11,8 @@
     <Nullable>enable</Nullable>
     <!--<ImplicitUsings>enable</ImplicitUsings>-->
 
+    <IsPackable>true</IsPackable>
+
     <!--https://github.com/dotnet/maui/issues/12100-->
     <!--<PublishReadyToRun>false</PublishReadyToRun>-->
 
