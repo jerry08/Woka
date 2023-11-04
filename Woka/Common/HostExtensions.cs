@@ -30,6 +30,8 @@ public static class HostExtensions
             handlers.AddHandler<Entry, EntryHandler>();
             handlers.AddHandler<RefreshView, RefreshViewHandler>();
             handlers.AddHandler<CollectionView, CollectionViewHandler>();
+#elif IOS || MACCATALYST
+            handlers.AddHandler<RefreshView, RefreshViewHandler>();
 #elif WINDOWS
             handlers.AddHandler<CollectionView, CollectionViewHandler>();
             handlers.AddHandler<RefreshView, RefreshViewHandler>();
@@ -60,23 +62,6 @@ public static class HostExtensions
 
     private static void AppendMappings()
     {
-        Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("NoUnderline", (handler, v) =>
-        {
-#if ANDROID
-            // Remove underline:
-            handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToAndroid());
-
-            //Set cursor color
-            if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Q
-                && v.TextColor is not null)
-            {
-#pragma warning disable CA1416
-                handler.PlatformView.TextCursorDrawable?.SetTint(v.TextColor.ToAndroid());
-#pragma warning restore CA1416
-            }
-#endif
-        });
-
         AllowMultiLineTruncation();
 
 #if WINDOWS
