@@ -33,36 +33,6 @@ builder
     .ConfigureWorkarounds();
 ```
 
-### Special cases
-
-For .Net MAUI issues [#15143](https://github.com/dotnet/maui/issues/15143) and [#15018](https://github.com/dotnet/maui/issues/15018), use WokaGrid control:
-
-```
-xmlns:woka="clr-namespace:Woka.Controls;assembly=Woka"
-```
-
-```C#
-<woka:WokaGrid ...>
-    ...
-</woka:WokaGrid>
-```
-
-Or override the LayoutManager in a custom Grid control. For example:
-
-```C#
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Layouts;
-using Woka.Layouts;
-```
-
-```C#
-public class CustomGrid : Grid
-{
-    protected override ILayoutManager CreateLayoutManager()
-        => new WokaGridLayoutManager(this);
-}
-```
-
 ### Workaround coverage:
 Fixes known issues/bugs:
  - [#5983](https://github.com/dotnet/maui/issues/5983) - Keyboard does not Pop Up when Entry View's Focus is set to True Programmatically
