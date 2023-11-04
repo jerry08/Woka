@@ -47,3 +47,4 @@ Fixes known issues/bugs:
  - [#15018](https://github.com/dotnet/maui/issues/15018) - [iOS/Catalyst] Grid issue with calculating * values on iOS/MacCatalyst
  - [#14557](https://github.com/dotnet/maui/issues/14557) - CollectionView Header & Footer not showing
  - [#6404](https://github.com/dotnet/maui/issues/6404) - (Windows) RC1 - RefreshView does not appear when swiping down with mouse
+ - [#7315](https://github.com/dotnet/maui/issues/7315) - iOS - CollectionView inside of RefreshView does not size correctly
