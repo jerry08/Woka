@@ -1,7 +1,7 @@
 <Project>
 
   <PropertyGroup>
-    <Version>1.0.13</Version>
+    <Version>1.0.15</Version>
     <Company>Jerro</Company>
     <Copyright>Copyright (C) Jerry Berry</Copyright>
     <LangVersion>latest</LangVersion>
@@ -14,19 +14,13 @@
     <Authors>$(Company)</Authors>
     <PackageTags>woka maui android mac ios windows issues bugs fixes csharp</PackageTags>
     <PackageProjectUrl>https://github.com/jerry08/Woka</PackageProjectUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <!--<PackageIcon>favicon.png</PackageIcon>-->
     <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DebugType>embedded</DebugType>
     <RepositoryType>git</RepositoryType>
+    <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="../README.md" Pack="true" PackagePath="" Visible="false" />
-    <!--<None Include="../favicon.png" Pack="true" PackagePath="" Visible="false" />-->
-  </ItemGroup>
 
 </Project>
