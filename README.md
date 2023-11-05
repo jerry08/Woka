@@ -35,12 +35,12 @@ builder
 
 ### Workaround coverage:
 Fixes known issues/bugs:
- - [#5983](https://github.com/dotnet/maui/issues/5983) - Keyboard does not Pop Up when Entry View's Focus is set to True Programmatically
- - [#8787](https://github.com/dotnet/maui/issues/8787) Completed ✔️ - Image Source to null doesn't work if the Source had a different value before
+ - [#5983](https://github.com/dotnet/maui/issues/5983) - (Removed) ✔️ Keyboard does not Pop Up when Entry View's Focus is set to True Programmatically
+ - [#8787](https://github.com/dotnet/maui/issues/8787) (Removed) ✔️ - Image Source to null doesn't work if the Source had a different value before
  - [#8926](https://github.com/dotnet/maui/issues/8926) - Pull to refresh on RefreshView does not hide the refresh indicator
  - [#6092](https://github.com/dotnet/maui/issues/6092) - The prompts displayed by DisplayAlert and other controls do not follow the theme set
  - [#6030](https://github.com/dotnet/maui/issues/6030) - Label MaxLines doesn't work
- - [#12219](https://github.com/dotnet/maui/issues/12219) Completed ✔️ - [Android] CollectionView: VirtualView cannot be null here, when clearing and adding items on second navigation
+ - [#12219](https://github.com/dotnet/maui/issues/12219) (Removed) ✔️ - [Android] CollectionView: VirtualView cannot be null here, when clearing and adding items on second navigation
  - [#4116](https://github.com/dotnet/maui/issues/4116) - [Windows] CollectionView ItemsUpdatingScrollMode property not working
  - [#8387](https://github.com/dotnet/maui/issues/8387) - [Windows] Notify changes in CollectionView Layouts
  - [#15143](https://github.com/dotnet/maui/issues/15143) - Account for padding when expanding * rows/columns to new sizes

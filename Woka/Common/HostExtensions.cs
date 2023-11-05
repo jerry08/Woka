@@ -27,7 +27,6 @@ public static class HostExtensions
             handlers.AddHandler<Image, ImageHandler>();
 
 #if ANDROID
-            handlers.AddHandler<Entry, EntryHandler>();
             handlers.AddHandler<RefreshView, RefreshViewHandler>();
             handlers.AddHandler<CollectionView, CollectionViewHandler>();
 #elif IOS || MACCATALYST
