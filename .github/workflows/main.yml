@@ -29,10 +29,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup .NET 7
+      - name: Install .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 7.0.x
+          dotnet-version: 8.0.x
           
       - name: Install MAUI Workload
         run: dotnet workload install maui --ignore-failed-sources
@@ -41,7 +41,7 @@ jobs:
         run: dotnet restore Woka/Woka.csproj
 
       - name: Build MAUI Android
-        run: dotnet publish Woka/Woka.csproj -c Release -f net7.0-android --no-restore
+        run: dotnet publish Woka/Woka.csproj -c Release -f net8.0-android --no-restore
 
 # MAUI Windows Build
   build-windows:
@@ -52,10 +52,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup .NET 7
+      - name: Install .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 7.0.x
+          dotnet-version: 8.0.x
 
       - name: Install MAUI Workload
         run: dotnet workload install maui --ignore-failed-sources
@@ -64,7 +64,7 @@ jobs:
         run: dotnet restore Woka/Woka.csproj
 
       - name: Build MAUI Windows
-        run: dotnet publish Woka/Woka.csproj -c Release -f net7.0-windows10.0.19041.0 --no-restore
+        run: dotnet publish Woka/Woka.csproj -c Release -f net8.0-windows10.0.19041.0 --no-restore
 
 # MAUI iOS Build
   build-ios:
@@ -75,10 +75,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup .NET 7
+      - name: Install .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 7.0.x
+          dotnet-version: 8.0.x
 
       - name: Install MAUI Workload
         run: dotnet workload install maui --ignore-failed-sources
@@ -87,7 +87,7 @@ jobs:
         run: dotnet restore Woka/Woka.csproj
 
       - name: Build MAUI iOS
-        run: dotnet build Woka/Woka.csproj -c Release -f net7.0-ios --no-restore /p:buildForSimulator=True /p:packageApp=True /p:ArchiveOnBuild=False
+        run: dotnet build Woka/Woka.csproj -c Release -f net8.0-ios --no-restore /p:buildForSimulator=True /p:packageApp=True /p:ArchiveOnBuild=False
 
 # MAUI MacCatalyst Build
   build-mac:
@@ -98,10 +98,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup .NET 7
+      - name: Install .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 7.0.x
+          dotnet-version: 8.0.x
 
       - name: Install MAUI Workload
         run: dotnet workload install maui --ignore-failed-sources
@@ -110,4 +110,4 @@ jobs:
         run: dotnet restore Woka/Woka.csproj
 
       - name: Build MAUI MacCatalyst
-        run: dotnet publish Woka/Woka.csproj -c Release -f net7.0-maccatalyst --no-restore -p:BuildIpa=True
+        run: dotnet publish Woka/Woka.csproj -c Release -f net8.0-maccatalyst --no-restore -p:BuildIpa=True
