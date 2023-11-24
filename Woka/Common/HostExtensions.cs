@@ -1,7 +1,6 @@
 ﻿using Microsoft.Maui;
-using Microsoft.Maui.Hosting;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Hosting;
 using Microsoft.Maui.LifecycleEvents;
 using Woka.Handlers;
 
@@ -30,9 +29,6 @@ public static class HostExtensions
             handlers.AddHandler<RefreshView, RefreshViewHandler>();
             handlers.AddHandler<CollectionView, CollectionViewHandler>();
 #elif IOS || MACCATALYST
-            handlers.AddHandler<RefreshView, RefreshViewHandler>();
-#elif WINDOWS
-            handlers.AddHandler<CollectionView, CollectionViewHandler>();
             handlers.AddHandler<RefreshView, RefreshViewHandler>();
 #endif
         }).ConfigureLifecycleEvents(events =>
