@@ -1,5 +1,5 @@
-﻿using Microsoft.Maui.Controls;
-using Microsoft.Maui.ApplicationModel;
+﻿using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Controls;
 
 namespace Woka;
 
@@ -23,21 +23,27 @@ public static class ThemeManager
 
 #if ANDROID
         //AppCompatDelegate.DefaultNightMode = (int)UiNightMode.Yes;
-        AndroidX.AppCompat.App.AppCompatDelegate.DefaultNightMode = Application.Current.UserAppTheme switch
+        AndroidX.AppCompat.App.AppCompatDelegate.DefaultNightMode = Application
+            .Current
+            .UserAppTheme switch
         {
             AppTheme.Light => AndroidX.AppCompat.App.AppCompatDelegate.ModeNightNo,
             AppTheme.Dark => AndroidX.AppCompat.App.AppCompatDelegate.ModeNightYes,
             _ => AndroidX.AppCompat.App.AppCompatDelegate.ModeNightFollowSystem
         };
 #elif IOS
-            Platform.GetCurrentUIViewController().OverrideUserInterfaceStyle = Application.Current.UserAppTheme switch
-            {
-                AppTheme.Light => UIKit.UIUserInterfaceStyle.Light,
-                AppTheme.Dark => UIKit.UIUserInterfaceStyle.Dark,
-                _ => UIKit.UIUserInterfaceStyle.Unspecified
-            };
+        var viewController = Platform.GetCurrentUIViewController();
+        if (viewController is null)
+            return;
 
-            //UIKit.UIApplication.SharedApplication.Windows[0].OverrideUserInterfaceStyle = UIKit.UIUserInterfaceStyle.Dark;
+        viewController.OverrideUserInterfaceStyle = Application.Current.UserAppTheme switch
+        {
+            AppTheme.Light => UIKit.UIUserInterfaceStyle.Light,
+            AppTheme.Dark => UIKit.UIUserInterfaceStyle.Dark,
+            _ => UIKit.UIUserInterfaceStyle.Unspecified
+        };
+
+        //UIKit.UIApplication.SharedApplication.Windows[0].OverrideUserInterfaceStyle = UIKit.UIUserInterfaceStyle.Dark;
 #endif
     }
 }

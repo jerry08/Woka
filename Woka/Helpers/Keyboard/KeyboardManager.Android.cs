@@ -29,11 +29,19 @@ public static partial class KeyboardManager
         inputView = inputView.GetInputView();
 
         if (inputView?.Context == null)
-            throw new ArgumentNullException(nameof(inputView) + " must be set before the keyboard can be hidden.");
+            throw new ArgumentNullException(
+                nameof(inputView) + " must be set before the keyboard can be hidden."
+            );
 
-        using var inputMethodManager = (InputMethodManager)inputView.Context.GetSystemService(Context.InputMethodService)!;
-        if (!overrideValidation && !(inputView is EditText || inputView is TextView || inputView is SearchView))
-            throw new ArgumentException("inputView should be of type EditText, SearchView, or TextView");
+        using var inputMethodManager = (InputMethodManager)
+            inputView.Context.GetSystemService(Context.InputMethodService)!;
+        if (
+            !overrideValidation
+            && !(inputView is EditText || inputView is TextView || inputView is SearchView)
+        )
+            throw new ArgumentException(
+                "inputView should be of type EditText, SearchView, or TextView"
+            );
 
         var windowToken = inputView.WindowToken;
         if (windowToken != null && inputMethodManager != null)
@@ -43,9 +51,12 @@ public static partial class KeyboardManager
     static void ShowKeyboard(this TextView inputView, bool focusRequested = false)
     {
         if (inputView?.Context == null)
-            throw new ArgumentNullException(nameof(inputView) + " must be set before the keyboard can be shown.");
+            throw new ArgumentNullException(
+                nameof(inputView) + " must be set before the keyboard can be shown."
+            );
 
-        using var inputMethodManager = (InputMethodManager)inputView.Context.GetSystemService(Context.InputMethodService)!;
+        using var inputMethodManager = (InputMethodManager)
+            inputView.Context.GetSystemService(Context.InputMethodService)!;
         if (!inputView.HasFocus)
         {
             // The keyboard only likes to open when you've focused the element that the keyboard will interact with
@@ -63,7 +74,10 @@ public static partial class KeyboardManager
     {
         return view switch
         {
-            SearchView searchView => searchView.FindViewById(searchView.Resources.GetIdentifier("android:id/search_src_text", null, null)),
+            SearchView searchView
+                => searchView.FindViewById(
+                    searchView.Resources.GetIdentifier("android:id/search_src_text", null, null)
+                ),
             TextView textView => textView,
             TextInputLayout inputLayout => inputLayout.EditText,
             _ => throw new Exception($"Unable to locate `TextView` for {view}"),
