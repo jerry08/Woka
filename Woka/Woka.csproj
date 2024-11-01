@@ -34,9 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CSharpier.MsBuild" Version="0.28.2" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.40" />
-    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.40" />
+    <PackageReference Include="CSharpier.MsBuild" Version="0.29.2" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.92" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.92" />
   </ItemGroup>
 
 </Project>
