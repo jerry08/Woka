@@ -29,7 +29,7 @@ public static class ThemeManager
         {
             AppTheme.Light => AndroidX.AppCompat.App.AppCompatDelegate.ModeNightNo,
             AppTheme.Dark => AndroidX.AppCompat.App.AppCompatDelegate.ModeNightYes,
-            _ => AndroidX.AppCompat.App.AppCompatDelegate.ModeNightFollowSystem
+            _ => AndroidX.AppCompat.App.AppCompatDelegate.ModeNightFollowSystem,
         };
 #elif IOS
         var viewController = Platform.GetCurrentUIViewController();
@@ -40,7 +40,7 @@ public static class ThemeManager
         {
             AppTheme.Light => UIKit.UIUserInterfaceStyle.Light,
             AppTheme.Dark => UIKit.UIUserInterfaceStyle.Dark,
-            _ => UIKit.UIUserInterfaceStyle.Unspecified
+            _ => UIKit.UIUserInterfaceStyle.Unspecified,
         };
 
         //UIKit.UIApplication.SharedApplication.Windows[0].OverrideUserInterfaceStyle = UIKit.UIUserInterfaceStyle.Dark;

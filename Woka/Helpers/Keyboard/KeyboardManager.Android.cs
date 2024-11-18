@@ -74,10 +74,9 @@ public static partial class KeyboardManager
     {
         return view switch
         {
-            SearchView searchView
-                => searchView.FindViewById(
-                    searchView.Resources.GetIdentifier("android:id/search_src_text", null, null)
-                ),
+            SearchView searchView => searchView.FindViewById(
+                searchView.Resources.GetIdentifier("android:id/search_src_text", null, null)
+            ),
             TextView textView => textView,
             TextInputLayout inputLayout => inputLayout.EditText,
             _ => throw new Exception($"Unable to locate `TextView` for {view}"),
